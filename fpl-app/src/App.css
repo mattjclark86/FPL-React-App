@@ -6,10 +6,12 @@
 .Header {
     color: white;
     font-size: 24px;
+    text-align: center;
 }
 
 .Content {
     font-size: 20px;
+    padding: 24px;
 }
 
 .Sider {
@@ -17,6 +19,14 @@
     font-size: 20px;
 }
 
+.Sider-Header {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
 .Footer {
     font-size: 20px;
+    padding: 24px;
+    text-align: center;
 }

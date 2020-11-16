@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
-import { Layout } from 'antd';
+import { Layout, Divider } from 'antd';
 import 'antd/dist/antd.css';
 import './App.css';
 //Above import is a temporary font color solution until
@@ -17,23 +17,29 @@ class AppOne extends Component {
     return (
       <Layout className="Layout">
         <BrowserRouter>
-          <Layout.Header className="Header">Item List (Header)</Layout.Header>
+          <Layout.Header className="Header">FPL App (Header)</Layout.Header>
           <Layout>
             <Layout.Sider className="Sider" width="250px">
+              <p className="Sider-Header">Item List (Header)</p>
               <ol>
                 <li>
-                  <Link to="/itemOne" className="menuLink">Item One (First Link)</Link>
+                  <Link to="/" className="menuLink">Main Menu (First Link)</Link>
                 </li>
                 <li>
-                  <Link to="/itemTwo" className="menuLink">Item Two (Second Link)</Link>
+                  <Link to="/itemOne" className="menuLink">Week 7 (Second Link)</Link>
                 </li>
                 <li>
-                  <Link to="/itemThree" className="menuLink">Item Three (Third Link)</Link>
+                  <Link to="/itemTwo" className="menuLink">Week 8 (Third Link)</Link>
+                </li>
+                <li>
+                  <Link to="/itemThree" className="menuLink">Week 9 (Fourth Link)</Link>
                 </li>
               </ol>
             </Layout.Sider>
-            <Layout.Footer className="Footer">FPL App (Footer)</Layout.Footer>
             <Switch>
+              <Route exact path="/">
+                <MainMenu />
+              </Route>
               <Route exact path="/itemOne">
                 <ItemOne />
               </Route>
@@ -45,6 +51,7 @@ class AppOne extends Component {
               </Route>
             </Switch>
           </Layout>
+          <Layout.Footer className="Footer">FPL App (Footer)</Layout.Footer>
         </BrowserRouter>
       </Layout>
     );
@@ -55,7 +62,11 @@ class ItemOne extends Component {
   render() {
     return (
       <Layout>
-        <Layout.Content className="Content">Item 1 (Content)</Layout.Content>
+        <Layout.Content className="Content">
+          FPL Analysis - Week 7 (Content)
+          <Divider/>
+          <iframe src="https://drive.google.com/file/d/1r1n6ga7nAOVj8vyaGQbBc3HN14WDy8Fv/preview" width="100%" height="90%" title="FPL Analysis - Week 7"></iframe>
+        </Layout.Content>
       </Layout>
     );
   }
@@ -65,7 +76,11 @@ class ItemTwo extends Component {
   render() {
     return (
       <Layout>
-        <Layout.Content className="Content">Item 2 (Content)</Layout.Content>
+        <Layout.Content className="Content">
+          FPL Analysis - Week 8 (Content)
+          <Divider/>
+          <iframe src="https://drive.google.com/file/d/1YrxGzOzQy5muJPxpm2AIVY4J06yTYc42/preview" width="100%" height="90%" title="FPL Analysis - Week 8"></iframe>
+        </Layout.Content>
       </Layout>
     );
   }
@@ -75,9 +90,23 @@ class ItemThree extends Component {
   render() {
     return (
       <Layout>
-        <Layout.Content className="Content">Item 3 (Content)</Layout.Content>
+        <Layout.Content className="Content">
+          FPL Analysis - Week 9 (Content)
+          <Divider/>
+          <iframe src="https://drive.google.com/file/d/1fIDUTtF5z5HpTYsRgHH9WgRz-TQKd3Tq/preview" width="100%" height="90%" title="FPL Analysis - Week 9"></iframe>
+        </Layout.Content>
       </Layout>
     );
+  }
+}
+
+class MainMenu extends Component {
+  render() {
+    return (
+      <Layout>
+        <Layout.Content className="Content">Click an item from the menu on the left! (Content)</Layout.Content>
+      </Layout>
+    )
   }
 }
 
