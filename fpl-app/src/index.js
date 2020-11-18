@@ -8,9 +8,17 @@ import './App.css';
 //I figure out how to edit the antd css
 import reportWebVitals from './reportWebVitals';
 
-//Tasks for next time:
-//Fit the content/footer/sider (and header) better, make them central and size flexible
-//Figure out how to properly style the components using antd css
+//With the basics complete, the next tasks are:
+//Improve the UI design
+//Add the ability to add comments/other reactions
+//Add scalability/dynamic elements (screen sizes, being able to edit the website)
+
+//Tasks later down the line
+//App that lets you input a FPL player and get stats from understat/transfermarkt/etc.
+//This could be done using screenshots or taking stats from inspect element (or anything that works)
+//App that dynamically generates a infographic for a player (picture, stats, etc.)
+//Could make it into a comparison website?
+//This would be a very long-term project
 
 class AppOne extends Component {
   render() {
