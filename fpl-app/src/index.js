@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
-import { Layout, Divider } from 'antd';
+import { Layout, Divider, Menu } from 'antd';
 import 'antd/dist/antd.css';
 import './App.css';
 //Above import is a temporary font color solution until
 //I figure out how to edit the antd css
 import reportWebVitals from './reportWebVitals';
+import MenuItem from 'antd/lib/menu/MenuItem';
 
 //With the basics complete, the next tasks are:
 //Improve the UI design
@@ -25,24 +26,27 @@ class AppOne extends Component {
     return (
       <Layout className="Layout">
         <BrowserRouter>
-          <Layout.Header className="Header">FPL App (Header)</Layout.Header>
+          <Layout.Header className="Header">FPL App</Layout.Header>
           <Layout>
             <Layout.Sider className="Sider" width="250px">
-              <p className="Sider-Header">Item List (Header)</p>
-              <ol>
-                <li>
-                  <Link to="/" className="menuLink">Main Menu (First Link)</Link>
-                </li>
-                <li>
-                  <Link to="/itemOne" className="menuLink">Week 7 (Second Link)</Link>
-                </li>
-                <li>
-                  <Link to="/itemTwo" className="menuLink">Week 8 (Third Link)</Link>
-                </li>
-                <li>
-                  <Link to="/itemThree" className="menuLink">Week 9 (Fourth Link)</Link>
-                </li>
-              </ol>
+              <Divider/>
+              <Menu theme="dark" className="Menu">
+                <MenuItem>
+                  <Link to="/" className="menuLink">Main Menu</Link>
+                </MenuItem>
+                <Divider/>
+                <MenuItem>
+                  <Link to="/itemOne" className="menuLink">Week 7</Link>
+                </MenuItem>
+                <Divider/>
+                <MenuItem>
+                  <Link to="/itemTwo" className="menuLink">Week 8</Link>
+                </MenuItem>
+                <Divider/>
+                <MenuItem>
+                  <Link to="/itemThree" className="menuLink">Week 9</Link>
+                </MenuItem>
+              </Menu>
             </Layout.Sider>
             <Switch>
               <Route exact path="/">
@@ -59,7 +63,7 @@ class AppOne extends Component {
               </Route>
             </Switch>
           </Layout>
-          <Layout.Footer className="Footer">FPL App (Footer)</Layout.Footer>
+          <Layout.Footer className="Footer">&copy; M. Clark</Layout.Footer>
         </BrowserRouter>
       </Layout>
     );
@@ -71,7 +75,7 @@ class ItemOne extends Component {
     return (
       <Layout>
         <Layout.Content className="Content">
-          FPL Analysis - Week 7 (Content)
+          FPL Analysis - Week 7
           <Divider/>
           <iframe src="https://drive.google.com/file/d/1r1n6ga7nAOVj8vyaGQbBc3HN14WDy8Fv/preview" width="100%" height="90%" title="FPL Analysis - Week 7"></iframe>
         </Layout.Content>
@@ -85,7 +89,7 @@ class ItemTwo extends Component {
     return (
       <Layout>
         <Layout.Content className="Content">
-          FPL Analysis - Week 8 (Content)
+          FPL Analysis - Week 8
           <Divider/>
           <iframe src="https://drive.google.com/file/d/1YrxGzOzQy5muJPxpm2AIVY4J06yTYc42/preview" width="100%" height="90%" title="FPL Analysis - Week 8"></iframe>
         </Layout.Content>
@@ -99,7 +103,7 @@ class ItemThree extends Component {
     return (
       <Layout>
         <Layout.Content className="Content">
-          FPL Analysis - Week 9 (Content)
+          FPL Analysis - Week 9
           <Divider/>
           <iframe src="https://drive.google.com/file/d/1fIDUTtF5z5HpTYsRgHH9WgRz-TQKd3Tq/preview" width="100%" height="90%" title="FPL Analysis - Week 9"></iframe>
         </Layout.Content>
@@ -112,7 +116,10 @@ class MainMenu extends Component {
   render() {
     return (
       <Layout>
-        <Layout.Content className="Content">Click an item from the menu on the left! (Content)</Layout.Content>
+        <Layout.Content className="Content">
+          Click an item from the menu on the left!
+          <Divider/>
+        </Layout.Content>
       </Layout>
     )
   }
